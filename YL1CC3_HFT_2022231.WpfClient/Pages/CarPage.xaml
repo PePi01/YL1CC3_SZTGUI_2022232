@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <Label Content="Cars:"  FontSize="20"/>
-            <ListBox ItemsSource="{Binding Cars}" MaxHeight="350">
+            <ListBox ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" MaxHeight="350">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Label Content="{Binding Model}" />
@@ -30,6 +30,29 @@
             <Button Content="Add car" Command="{Binding CreateCarCmd}" Margin="10" Padding="10"/>
             <Button Content="Delete car" Command="{Binding DeleteCarCmd}" Margin="10" Padding="10"/>
             <Button Content="Modify car" Command="{Binding UpdateCarCmd}" Margin="10" Padding="10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" >
+            <Label Content="Model"/>
+            <TextBox Text="{Binding SelectedCar.Model, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
+            <Label Content="Brands"/>
+            <WrapPanel>
+                <ListBox ItemsSource="{Binding Brands}" HorizontalAlignment="Center" Width="100">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox ItemsSource="{Binding Brands}" SelectedItem="{Binding BrandSelection}" HorizontalAlignment="Center" Width="100">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Id}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </WrapPanel>
+            <Label Content="Price"/>
+            <TextBox Background="LightBlue" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using YL1CC3_HFT_2022231.Logic;
 using YL1CC3_HFT_2022231.Models;
 
 namespace YL1CC3_HFT_2022231.WpfClient

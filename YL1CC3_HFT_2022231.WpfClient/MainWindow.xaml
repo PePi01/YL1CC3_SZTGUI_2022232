@@ -18,9 +18,9 @@
         <Label Content="Welcome to the Rental Service" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Grid.Row="0"/>
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             
-            <Button Content="Cars" Grid.Row="1" Margin="40" Padding="20" Click="Cars_Click" Command="{Binding CarOpener}"/>
-            <Button Content="Brands" Grid.Row="1" Margin="40" Padding="20" Click="Brands_Click" Command="{Binding BrandOpener}"/>
-            <Button Content="Rents" Grid.Row="1" Margin="40" Padding="20" Click="Rents_Click" Command="{Binding RentOpener}"/>
+            <Button Content="Cars" Grid.Row="1" Margin="40" Padding="20" Click="Cars_Click"/>
+            <Button Content="Brands" Grid.Row="1" Margin="40" Padding="20" Click="Brands_Click"/>
+            <Button Content="Rents" Grid.Row="1" Margin="40" Padding="20" Click="Rents_Click"/>
         </WrapPanel>
     </Grid>
     

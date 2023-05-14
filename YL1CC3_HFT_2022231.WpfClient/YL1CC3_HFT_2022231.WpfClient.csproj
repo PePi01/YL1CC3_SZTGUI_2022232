@@ -12,7 +12,6 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-    <ProjectReference Include="..\YL1CC3_HFT_2022231.Logic\YL1CC3_HFT_2022231.Logic.csproj" />
     <ProjectReference Include="..\YL1CC3_HFT_2022231.Models\YL1CC3_HFT_2022231.Models.csproj" />
   </ItemGroup>
 
