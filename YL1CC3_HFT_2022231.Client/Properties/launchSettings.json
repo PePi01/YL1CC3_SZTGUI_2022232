@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "YL1CC3_HFT_2022231.Client": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    }
+  }
+}

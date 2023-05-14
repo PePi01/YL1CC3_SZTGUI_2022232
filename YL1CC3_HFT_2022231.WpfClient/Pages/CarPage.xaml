@@ -1,0 +1,35 @@
+﻿<Window x:Class="YL1CC3_HFT_2022231.WpfClient.Pages.CarPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YL1CC3_HFT_2022231.WpfClient.Pages"
+        xmlns:local1="clr-namespace:YL1CC3_HFT_2022231.WpfClient.ViewModel"
+        mc:Ignorable="d"
+        Title="CarPage" Height="450" Width="800">
+    <Window.DataContext>
+        <local1:CarViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Cars:"  FontSize="20"/>
+            <ListBox ItemsSource="{Binding Cars}" MaxHeight="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Model}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Button Content="Add car" Command="{Binding CreateCarCmd}" Margin="10" Padding="10"/>
+            <Button Content="Delete car" Command="{Binding DeleteCarCmd}" Margin="10" Padding="10"/>
+            <Button Content="Modify car" Command="{Binding UpdateCarCmd}" Margin="10" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
