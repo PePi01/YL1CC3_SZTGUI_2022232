@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YL1CC3_HFT_2022231.Endpoint.Services;
 using YL1CC3_HFT_2022231.Logic;
 using YL1CC3_HFT_2022231.Models;
 
@@ -15,10 +17,11 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
     public class NCCarController : ControllerBase
     {
         ICarLogic logic;
-
-        public NCCarController(ICarLogic logic)
+        IHubContext<SignalRHub> hub;
+        public NCCarController(ICarLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
         [HttpGet]
         public IEnumerable<RentFrequency> FreqOfCarsRented()

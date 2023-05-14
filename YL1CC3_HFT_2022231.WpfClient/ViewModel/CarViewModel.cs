@@ -32,25 +32,20 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
                 {
                     selectedCar = new Car()
                     {
+                        
+                        Price=value.Price,
+                        BrandId=value.BrandId,
                         Model = value.Model,
                         Id = value.Id
                     };
                     OnPropertyChanged();
                 }
-                (DeleteCarCmd as RelayCommand).NotifyCanExecuteChanged();
-            }
-        }
-        private int brandSelection;
-
-        public int BrandSelection
-        {
-            get { return brandSelection; }
-            set
-            {
-                SetProperty(ref brandSelection,value);
                 (UpdateCarCmd as RelayCommand).NotifyCanExecuteChanged();
+                (DeleteCarCmd as RelayCommand).NotifyCanExecuteChanged();
+                (CreateCarCmd as RelayCommand).NotifyCanExecuteChanged();
             }
         }
+     
 
 
 
@@ -58,16 +53,23 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
         {
             if (!IsInDesignMode)
             {
-                Cars = new RestCollection<Car>("http://localhost:10237/", "car");
-                Brands = new RestCollection<Brand>("http://localhost:10237/", "brand");
+                Cars = new RestCollection<Car>("http://localhost:10237/", "car", "hub");
+                Brands = new RestCollection<Brand>("http://localhost:10237/", "brand", "hub");
 
                 CreateCarCmd = new RelayCommand(() =>
                 {
                     Cars.Add(new Car()
                     {
-                        Model = "babakaka",
+                        Model = SelectedCar.Model,
+                        BrandId = SelectedCar.BrandId,
+                        Price = SelectedCar.Price,
+
                     });
                 });
+                /*,() =>
+                {
+                    return default; //SelectedCar != null;
+                });*/
 
                 DeleteCarCmd = new RelayCommand(() =>
                   {
@@ -81,9 +83,13 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
 
                 UpdateCarCmd = new RelayCommand(() =>
                 {
-                    SelectedCar.BrandId = BrandSelection;
+
                     Cars.Update(SelectedCar);
-                    ;
+                    
+                },
+                ()=>
+                {
+                    return SelectedCar != null;
                 });
                 
             }

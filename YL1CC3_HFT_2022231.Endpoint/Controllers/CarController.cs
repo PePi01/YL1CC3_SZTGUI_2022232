@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YL1CC3_HFT_2022231.Endpoint.Services;
 using YL1CC3_HFT_2022231.Logic;
 using YL1CC3_HFT_2022231.Models;
 
@@ -15,9 +17,11 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
     public class CarController : ControllerBase
     {
         ICarLogic logic;
-        public CarController(ICarLogic logic)
+        IHubContext<SignalRHub> hub;
+        public CarController(ICarLogic logic,IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -36,6 +40,7 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         public void Create([FromBody] Car value)
         {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("CarCreated", value);
         }
 
         //---------ez lehet h update nek kell
@@ -43,6 +48,7 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         public void Put([FromBody] Car value)
         {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("CarUpdated", value);
         }
         //---------
 
@@ -51,7 +57,9 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var CarToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("CarDeleted", CarToDelete);
         }
     }
 }

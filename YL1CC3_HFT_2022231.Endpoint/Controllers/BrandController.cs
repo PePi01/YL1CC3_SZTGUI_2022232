@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YL1CC3_HFT_2022231.Endpoint.Services;
 using YL1CC3_HFT_2022231.Logic;
 using YL1CC3_HFT_2022231.Models;
 
@@ -15,9 +17,11 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
     public class BrandController : ControllerBase
     {
         IBrandLogic logic;
-        public BrandController(IBrandLogic logic)
+        IHubContext<SignalRHub> hub;
+        public BrandController(IBrandLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -36,6 +40,7 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         public void Create([FromBody] Brand value)
         {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("BrandCreated", value);
         }
 
         [HttpPut]

@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YL1CC3_HFT_2022231.Endpoint.Services;
 using YL1CC3_HFT_2022231.Logic;
 using YL1CC3_HFT_2022231.Models;
 using YL1CC3_HFT_2022231.Repository;
@@ -38,6 +39,8 @@ namespace YL1CC3_HFT_2022231.Endpoint
             services.AddTransient<ICarLogic, CarLogic>();
             services.AddTransient<IRentLogic, RentLogic>();
             services.AddTransient<IBrandLogic, BrandLogic>();
+
+            services.AddSignalR();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -72,6 +75,7 @@ namespace YL1CC3_HFT_2022231.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

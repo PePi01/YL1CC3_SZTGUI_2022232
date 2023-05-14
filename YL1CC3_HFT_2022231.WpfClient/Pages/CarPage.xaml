@@ -34,7 +34,7 @@
         <StackPanel Grid.Column="2" >
             <Label Content="Model"/>
             <TextBox Text="{Binding SelectedCar.Model, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
-            <Label Content="Brands"/>
+            <Label Content="Brands to chose from"/>
             <WrapPanel>
                 <ListBox ItemsSource="{Binding Brands}" HorizontalAlignment="Center" Width="100">
                     <ListBox.ItemTemplate>
@@ -43,7 +43,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ListBox ItemsSource="{Binding Brands}" SelectedItem="{Binding BrandSelection}" HorizontalAlignment="Center" Width="100">
+                <ListBox ItemsSource="{Binding Brands}" HorizontalAlignment="Center" Width="100">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Label Content="{Binding Id}"/>
@@ -51,8 +51,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </WrapPanel>
+            <Label Content="New brand's ID"/>
+            <TextBox Text="{Binding SelectedCar.BrandId, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             <Label Content="Price"/>
-            <TextBox Background="LightBlue" Margin="5"/>
+            <TextBox Text="{Binding SelectedCar.Price, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>
