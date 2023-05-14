@@ -34,7 +34,8 @@ namespace YL1CC3_HFT_2022231.WpfClient
 
         private void Brands_Click(object sender, RoutedEventArgs e)
         {
-            
+            BrandPage bp = new BrandPage();
+            bp.ShowDialog();
         }
         
         private void Rents_Click(object sender, RoutedEventArgs e)

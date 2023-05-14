@@ -47,13 +47,15 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         public void Put([FromBody] Brand value)
         {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("BrandUpdated", value);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var BrandToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("BrandDeleted", BrandToDelete);
         }
-
     }
 }
