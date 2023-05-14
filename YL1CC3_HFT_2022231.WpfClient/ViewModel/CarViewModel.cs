@@ -65,11 +65,11 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
                         Price = SelectedCar.Price,
 
                     });
-                });
-                /*,() =>
+                }
+                ,() =>
                 {
-                    return default; //SelectedCar != null;
-                });*/
+                    return SelectedCar != null;
+                });
 
                 DeleteCarCmd = new RelayCommand(() =>
                   {

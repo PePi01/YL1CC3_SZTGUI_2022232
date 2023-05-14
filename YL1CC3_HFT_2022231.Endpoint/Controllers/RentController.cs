@@ -40,18 +40,22 @@ namespace YL1CC3_HFT_2022231.Endpoint.Controllers
         public void Create([FromBody] Rent value)
         {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("RentCreated", value);
         }
 
         [HttpPut]
         public void Put([FromBody] Rent value)
         {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("RentUpdated", value);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var RentToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("RentDeleted", RentToDelete);
         }
     }
 }

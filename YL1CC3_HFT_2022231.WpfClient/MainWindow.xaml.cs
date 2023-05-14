@@ -34,12 +34,13 @@ namespace YL1CC3_HFT_2022231.WpfClient
 
         private void Brands_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
         
         private void Rents_Click(object sender, RoutedEventArgs e)
         {
-
+            RentPage rp = new RentPage();
+            rp.ShowDialog();
         }
     }
 }

@@ -13,7 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="8*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Label Content="Welcome to the Rental Service" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Grid.Row="0"/>
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
