@@ -49,8 +49,8 @@
             <Button Content="FreqOfBrandsRented" Grid.Row="1" Margin="10"  Click="_2_Click"/>
             <Button Content="AvgPriceByBrand" Grid.Row="1" Margin="10"  Click="_3_Click"/>
             <Button Content="FreqOfCarsRented" Grid.Row="1" Margin="10"  Click="_4_Click"/>
-            <Button Content="ParametricBrands" Grid.Row="1" Margin="10"  Click="_5_Click"/>
-            <Button Content="RentTimes" Grid.Row="1" Margin="10" Padding="15" Click="_6_Click"/>
+            <Button Content="RentIntervals" Grid.Row="1" Margin="10"  Click="_5_Click"/>
+            <Button Content="ParametricBrands" Grid.Row="1" Margin="10" Padding="15" Click="_6_Click"/>
         </WrapPanel>
     </Grid>
     

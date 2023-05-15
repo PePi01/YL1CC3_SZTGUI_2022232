@@ -60,11 +60,13 @@ namespace YL1CC3_HFT_2022231.WpfClient
         }
         private void _4_Click(object sender, RoutedEventArgs e)
         {
-
+            RentFrequency win = new RentFrequency();
+            win.ShowDialog();
         }
         private void _5_Click(object sender, RoutedEventArgs e)
         {
-
+            Renting win = new Renting();
+            win.ShowDialog();
         }
         private void _6_Click(object sender, RoutedEventArgs e)
         {
