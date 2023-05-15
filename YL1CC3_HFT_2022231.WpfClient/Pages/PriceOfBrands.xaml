@@ -15,18 +15,18 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <TextBlock Text="This window shows the summerized price of each brand's models" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Column="0" Background="AntiqueWhite">
-            <ListBox ItemsSource="{Binding Brands}">
+            <ListBox ItemsSource="{Binding Data}" Background="AntiqueWhite">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="{Binding Brand}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <ListBox ItemsSource="{Binding Cars}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Label Content="{Binding Model}"/>
+                        <StackPanel>
+                            <WrapPanel>
+                                <Label Content="{Binding Brand}"/>
+                                <Label Content=" --> "/>
+                                <Label Content="{Binding Price}"/>
+                            </WrapPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

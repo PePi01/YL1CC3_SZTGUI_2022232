@@ -33,7 +33,7 @@ namespace YL1CC3_HFT_2022231.WpfClient
         {
             try
             {
-                ;
+                
                 WebClient wc = new WebClient();
                 wc.DownloadData(url);
                 return true;
@@ -65,10 +65,10 @@ namespace YL1CC3_HFT_2022231.WpfClient
 
         public async Task<List<T>> GetAsync<T>(string endpoint)
         {
-            ;
+            
             List<T> items = new List<T>();
             HttpResponseMessage response = await client.GetAsync(endpoint);
-            ;
+            
             if (response.IsSuccessStatusCode)
             {
                 items = await response.Content.ReadAsAsync<List<T>>();
@@ -83,7 +83,7 @@ namespace YL1CC3_HFT_2022231.WpfClient
 
         public List<T> Get<T>(string endpoint)
         {
-            ;
+            
             List<T> items = new List<T>();
             HttpResponseMessage response = client.GetAsync(endpoint).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)

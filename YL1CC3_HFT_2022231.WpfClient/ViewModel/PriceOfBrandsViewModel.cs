@@ -14,11 +14,8 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
 {
     public class PriceOfBrandsViewModel : ObservableRecipient
     {
-        public RestCollection<PriceOfBrands> Brands { get; set; }
-        public RestCollection<Car> Cars { get; set; }
-        public ICommand CreateRentCmd { get; set; }
-        public ICommand DeleteRentCmd { get; set; }
-        public ICommand UpdateRentCmd { get; set; }
+        public RestCollection<PriceOfBrands> Data { get; set; }
+        
 
         private Rent selectedRent;
 
@@ -39,34 +36,14 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
 
                     OnPropertyChanged();
                 }
-                (UpdateRentCmd as RelayCommand).NotifyCanExecuteChanged();
-                (DeleteRentCmd as RelayCommand).NotifyCanExecuteChanged();
-                (CreateRentCmd as RelayCommand).NotifyCanExecuteChanged();
+                
             }
         }
-        static RestService rest;
         public PriceOfBrandsViewModel()
         {
             if (!IsInDesignMode)
             {
-                ;
-                Brands = new RestCollection<PriceOfBrands>("http://localhost:10237/", "NCBrand/SumPriceByBrand");
-                Cars = new RestCollection<Car>("http://localhost:10237/", "car", "hub");
-                ;
-                //var kukac = rest.GetAsync<Car>("Car");
-                    //var malac=rest.Get<PriceOfBrands>("NCBrand/SumPriceByBrand");
-                ;
-
-
-                //DeleteRentCmd = new RelayCommand(() =>
-                //{
-
-                //},
-                //() =>
-                //{
-                //    return SelectedRent != null;
-                //}
-                //);
+                Data = new RestCollection<PriceOfBrands>("http://localhost:10237/", "PriceOfBrands");
             }
         }
         public static bool IsInDesignMode
