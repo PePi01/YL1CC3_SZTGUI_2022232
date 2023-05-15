@@ -15,7 +15,7 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="The length of each rent" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="The length of each rent and what model was rented" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Column="0" Background="AntiqueWhite" >
             <ListBox ItemsSource="{Binding Data}" Background="AntiqueWhite" MaxHeight="400">
                 <ListBox.ItemTemplate>
@@ -23,7 +23,7 @@
                         <StackPanel>
                             <WrapPanel>
                                 <Label Content="{Binding Days}"/>
-                                <Label Content=" days --> "/>
+                                <Label Content="days --> "/>
                                 <Label Content="{Binding Model}"/>
                             </WrapPanel>
                         </StackPanel>

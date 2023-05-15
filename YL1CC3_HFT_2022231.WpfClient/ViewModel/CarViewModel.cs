@@ -56,6 +56,8 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
                 Cars = new RestCollection<Car>("http://localhost:10237/", "car", "hub");
                 Brands = new RestCollection<Brand>("http://localhost:10237/", "brand", "hub");
 
+                
+
                 CreateCarCmd = new RelayCommand(() =>
                 {
                     Cars.Add(new Car()
@@ -65,11 +67,8 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
                         Price = SelectedCar.Price,
 
                     });
-                }
-                ,() =>
-                {
-                    return SelectedCar != null;
                 });
+                
 
                 DeleteCarCmd = new RelayCommand(() =>
                   {
