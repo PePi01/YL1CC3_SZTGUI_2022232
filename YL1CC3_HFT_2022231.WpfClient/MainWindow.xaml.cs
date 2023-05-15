@@ -50,7 +50,8 @@ namespace YL1CC3_HFT_2022231.WpfClient
         }
         private void _2_Click(object sender, RoutedEventArgs e)
         {
-            
+            RentBrandFrequency win = new RentBrandFrequency();
+            win.ShowDialog();
         }
         private void _3_Click(object sender, RoutedEventArgs e)
         {

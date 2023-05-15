@@ -1,27 +1,24 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
 using YL1CC3_HFT_2022231.Models;
 
 namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
 {
-    public class PriceOfBrandsViewModel : ObservableRecipient
+    public class RentBrandFrequencyViewModel
     {
-        public RestCollection<PriceOfBrands> Data { get; set; }
-        
+        public RestCollection<RentBrandFrequency> Data { get; set; }
 
-        public PriceOfBrandsViewModel()
+
+        public RentBrandFrequencyViewModel()
         {
             if (!IsInDesignMode)
             {
-                Data = new RestCollection<PriceOfBrands>("http://localhost:10237/", "PriceOfBrands");
+                Data = new RestCollection<RentBrandFrequency>("http://localhost:10237/", "RentBrandFrequency");
             }
         }
         public static bool IsInDesignMode
