@@ -55,7 +55,8 @@ namespace YL1CC3_HFT_2022231.WpfClient
         }
         private void _3_Click(object sender, RoutedEventArgs e)
         {
-
+            AvgPriceOfBrands win = new AvgPriceOfBrands();
+            win.ShowDialog();
         }
         private void _4_Click(object sender, RoutedEventArgs e)
         {
