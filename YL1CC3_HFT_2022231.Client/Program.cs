@@ -176,7 +176,9 @@ namespace YL1CC3_HFT_2022231.Client
         }
         static void SPBB()
         {
+            ;
             var hello=rest.Get<PriceOfBrands>("NCBrand/SumPriceByBrand");
+            ;
             foreach (var item in hello)
             {
                 Console.WriteLine(item.Brand+": "+ item.Price);

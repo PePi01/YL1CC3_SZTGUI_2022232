@@ -18,9 +18,18 @@
         <Label Content="Welcome to the Rental Service" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Grid.Row="0"/>
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             
-            <Button Content="Cars" Grid.Row="1" Margin="40" Padding="20" Click="Cars_Click"/>
-            <Button Content="Brands" Grid.Row="1" Margin="40" Padding="20" Click="Brands_Click"/>
-            <Button Content="Rents" Grid.Row="1" Margin="40" Padding="20" Click="Rents_Click"/>
+            <Button Content="Cars" Grid.Row="1" Margin="20" Padding="20" Click="Cars_Click"/>
+            <Button Content="Brands" Grid.Row="1" Margin="20" Padding="20" Click="Brands_Click"/>
+            <Button Content="Rents" Grid.Row="1" Margin="20" Padding="20" Click="Rents_Click"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10">
+
+            <Button Content="SumPriceByBrand" Grid.Row="1" Margin="10"  Click="_1_Click"/>
+            <Button Content="FreqOfBrandsRented" Grid.Row="1" Margin="10"  Click="_2_Click"/>
+            <Button Content="AvgPriceByBrand" Grid.Row="1" Margin="10"  Click="_3_Click"/>
+            <Button Content="FreqOfCarsRented" Grid.Row="1" Margin="10"  Click="_4_Click"/>
+            <Button Content="ParametricBrands" Grid.Row="1" Margin="10"  Click="_5_Click"/>
+            <Button Content="RentTimes" Grid.Row="1" Margin="10" Padding="15" Click="_6_Click"/>
         </WrapPanel>
     </Grid>
     

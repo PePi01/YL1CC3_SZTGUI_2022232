@@ -43,5 +43,30 @@ namespace YL1CC3_HFT_2022231.WpfClient
             RentPage rp = new RentPage();
             rp.ShowDialog();
         }
+        private void _1_Click(object sender, RoutedEventArgs e)
+        {
+            PriceOfBrands win = new PriceOfBrands();
+            win.ShowDialog();
+        }
+        private void _2_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void _3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void _4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void _5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void _6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

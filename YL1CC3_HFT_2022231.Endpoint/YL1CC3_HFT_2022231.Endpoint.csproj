@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -12,6 +12,7 @@
     <ProjectReference Include="..\YL1CC3_HFT_2022231.Logic\YL1CC3_HFT_2022231.Logic.csproj" />
     <ProjectReference Include="..\YL1CC3_HFT_2022231.Models\YL1CC3_HFT_2022231.Models.csproj" />
     <ProjectReference Include="..\YL1CC3_HFT_2022231.Repository\YL1CC3_HFT_2022231.Repository.csproj" />
+    <ProjectReference Include="..\YL1CC3_HFT_2022231.WpfClient\YL1CC3_HFT_2022231.WpfClient.csproj" />
   </ItemGroup>
 
 </Project>

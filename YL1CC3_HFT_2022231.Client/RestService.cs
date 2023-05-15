@@ -57,7 +57,7 @@ namespace YL1CC3_HFT_2022231.Client
 
         public List<T> Get<T>(string endpoint)
         {
-            
+            ;
             List<T> items = new List<T>();
             HttpResponseMessage response = client.GetAsync(endpoint).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
