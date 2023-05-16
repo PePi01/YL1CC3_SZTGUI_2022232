@@ -21,21 +21,21 @@
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             
 
-            <Button Content="Cars" Grid.Row="1" Margin="20" Padding="20" Click="Cars_Click">
+            <Button Content="Cars" Grid.Row="1" Margin="20" Width="100" Padding="20" Click="Cars_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Brands" Grid.Row="1" Margin="20" Padding="20" Click="Brands_Click">
+            <Button Content="Brands" Grid.Row="1" Margin="20" Width="100" Padding="20" Click="Brands_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Rents" Grid.Row="1" Margin="20" Padding="20" Click="Rents_Click">
+            <Button Content="Rents" Grid.Row="1" Margin="20" Width="100" Padding="20" Click="Rents_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>

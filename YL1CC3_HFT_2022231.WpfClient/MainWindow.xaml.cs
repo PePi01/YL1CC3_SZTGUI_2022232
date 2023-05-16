@@ -70,7 +70,8 @@ namespace YL1CC3_HFT_2022231.WpfClient
         }
         private void _6_Click(object sender, RoutedEventArgs e)
         {
-
+            ParametricBrand win = new ParametricBrand();
+            win.ShowDialog();
         }
     }
 }
