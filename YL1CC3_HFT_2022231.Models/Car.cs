@@ -13,7 +13,7 @@ namespace YL1CC3_HFT_2022231.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [StringLength(10)]
+        [StringLength(15)]
         public string Model { get; set; }
         public int Price { get; set; }
         [NotMapped]

@@ -1,0 +1,32 @@
+﻿h1{
+    font-size:30px;
+}
+table,th,td{
+    //width:300px;
+    border:1px solid black;
+}
+table{
+    border-collapse:collapse;
+    margin-top:15px;
+}
+th,td{
+    padding:3px;
+}
+th{
+    background-color:antiquewhite;
+}
+#carcreate,  #bs {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+#cartabla button {
+    //background-image: url("S:\egyetem\8th degree\prog4\YL1CC3_HFT_2022231-master\YL1CC3_HFT_2022231-master\YL1CC3_HFT_2022231.JSClient\bin\Debug\net5.0");
+    margin:5px;
+}
+#modifycar {
+    display: none;
+    width: 200px;
+    flex-direction: column;
+}
+

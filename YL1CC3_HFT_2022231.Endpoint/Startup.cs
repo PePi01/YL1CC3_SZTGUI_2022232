@@ -68,6 +68,12 @@ namespace YL1CC3_HFT_2022231.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:47756"));
+
             app.UseRouting();
 
             app.UseAuthorization();

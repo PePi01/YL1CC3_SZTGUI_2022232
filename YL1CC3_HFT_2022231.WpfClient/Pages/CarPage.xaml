@@ -35,23 +35,23 @@
             <Label Content="Model"/>
             <TextBox Text="{Binding SelectedCar.Model, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             <Label Content="Brands to chose from"/>
-            <WrapPanel>
-                <ListBox ItemsSource="{Binding Brands}" HorizontalAlignment="Center" Width="100">
+            <StackPanel >
+                <ListBox ItemsSource="{Binding Brands}" Height="154">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Label Content="{Binding Name}"/>
+                            <StackPanel>
+                                <WrapPanel>
+                                    <Label Content="{Binding Name}"/>
+                                    <Label Content="-->"/>
+                                    <Label Content="{Binding Id}"/>
+                                </WrapPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ListBox ItemsSource="{Binding Brands}" HorizontalAlignment="Center" Width="100">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Label Content="{Binding Id}"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </WrapPanel>
-            <Label Content="New brand's ID"/>
+                
+            </StackPanel>
+            <Label Content="New car's BrandID"/>
             <TextBox Text="{Binding SelectedCar.BrandId, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             <Label Content="Price"/>
             <TextBox Text="{Binding SelectedCar.Price, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
