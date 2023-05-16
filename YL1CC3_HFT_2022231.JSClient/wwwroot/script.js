@@ -128,6 +128,7 @@ function ModifyCar() {
     let model = document.getElementById('modelmod').value;
     let brandid = document.getElementById('brandidmod').value;
     let price = document.getElementById('pricemod').value;
+    let kaki = null;
 
     fetch('http://localhost:10237/car/' , {
         method: 'PUT',
