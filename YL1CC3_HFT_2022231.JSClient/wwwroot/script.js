@@ -144,7 +144,6 @@ function ModifyCar() {
     let model = document.getElementById('modelmod').value;
     let brandid = document.getElementById('brandidmod').value;
     let price = document.getElementById('pricemod').value;
-    let kaki = null;
 
     fetch('http://localhost:10237/car/' , {
         method: 'PUT',
@@ -158,6 +157,7 @@ function ModifyCar() {
             //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
+    document.getElementById('modifycar').style.display = 'none';
 }
 function ShowModify(id) {
     carid = id;
@@ -246,6 +246,8 @@ function ModifyBrand() {
             //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
+
+    document.getElementById('modifybrand').style.display = 'none';
 }
 function ShowModifyBrand(id) {
     brandid = id;
@@ -255,7 +257,7 @@ function ShowModifyBrand(id) {
 function Brandpage() {
     document.getElementById('brandpage').style.display = 'flex';
     document.getElementById('brandcreate').style.display = 'flex';
-    document.getElementById('modifybrand').style.display = 'flex';
+    //document.getElementById('modifybrand').style.display = 'flex';
     document.getElementById('carpage').style.display = 'none';
 
 
