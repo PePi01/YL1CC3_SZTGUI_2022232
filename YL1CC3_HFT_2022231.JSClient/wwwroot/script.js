@@ -9,6 +9,7 @@ SetupSignalR();
 
 GetData();
 
+
 function SetupSignalR() {
     
     connection = new signalR.HubConnectionBuilder()
@@ -354,14 +355,15 @@ function ShowModelId() {
 
 function ModifyRent() {
     let start = document.getElementById('starttimemod').value;
-    let end = document.getElementById('starttimemod').value;
+    let end = document.getElementById('endtimemod').value;
+    let carid = document.getElementById('idmodelmod').value;
 
 
     fetch('http://localhost:10237/rent/', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { id: rentid, start: start, end:end }),
+            { id: rentid, carId: carid,start: start, end:end }),
     })
         .then(response => response)
         .then(data => {
