@@ -97,12 +97,22 @@ async function GetData() {
 /* START OF CAR SECTION */
 function ShowBrand() {
     document.getElementById('brandshow').innerHTML = '';
+    document.getElementById('parametricbrandshow').innerHTML = '';
     brands.forEach(t => {
         document.getElementById('brandshow').innerHTML +=
             "<tr>" +
         `<td>${t.name} → ${t.id}</td>` +
             "</tr>";
+
+
+        document.getElementById('parametricbrandshow').innerHTML +=
+            "<tr>" +
+            `<td>${t.name} </td> <td> ${t.id}</td>` +
+            "</tr>";
+
     });
+
+    
 }
 function ShowBrandMod() {
     document.getElementById('brandshowmod').innerHTML = '';
@@ -393,3 +403,151 @@ function RentPage() {
     //document.getElementById('modifyrent').style.display = 'block';
     document.getElementById('renttabla').style.display = 'block';
 }
+
+
+
+
+// NON CRUD SECTION
+async function Sumpricebybrand() {
+    let priceofbrand = [];
+
+
+    await fetch('http://localhost:10237/PriceOfBrands')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('sumpricebrandhead').innerHTML +=
+        `<td> Brand  </td><td> Price</td>`;
+    document.getElementById('sumpricebrandhead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('sumpricebrandbody').innerHTML +=
+            "<tr>" +
+        `<td>${t.brand}  </td><td> ${t.price}</td>` +
+            "</tr>";
+    })
+}
+
+async function Freqofbrandsrented() {
+    let priceofbrand = [];
+
+
+    await fetch('http://localhost:10237/RentBrandFrequency')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('fraqofbrandsrentedhead').innerHTML +=
+        `<td> Brand  </td><td> Frequency </td>`;
+    document.getElementById('fraqofbrandsrentedhead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('fraqofbrandsrentedbody').innerHTML +=
+            "<tr>" +
+        `<td>${t.brand}  </td><td> ${t.frequency}</td>` +
+            "</tr>";
+    })
+}
+
+async function Avgpricebybrand() {
+    let priceofbrand = [];
+
+
+    await fetch('http://localhost:10237/AvgPriceOfBrands')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('avgpricebybrandhead').innerHTML +=
+        `<td> Brand  </td><td> Price </td>`;
+    document.getElementById('avgpricebybrandhead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('avgpricebybrandbody').innerHTML +=
+            "<tr>" +
+        `<td>${t.brand}  </td><td> ${t.price}</td>` +
+            "</tr>";
+    })
+}
+
+async function Freqofcarsrented() {
+    let priceofbrand = [];
+
+
+    await fetch('http://localhost:10237/RentFrequency')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('freqofcarsrentedhead').innerHTML +=
+        `<td> Model  </td><td> Frequency </td>`;
+    document.getElementById('freqofcarsrentedhead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('freqofcarsrentedbody').innerHTML +=
+            "<tr>" +
+        `<td>${t.model} </td><td> ${t.frequency}</td>` +
+            "</tr>";
+    })
+}
+
+async function Rentintervals() {
+    let priceofbrand = [];
+
+
+    await fetch('http://localhost:10237/Renting')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('rentintervalshead').innerHTML +=
+        `<td> Model </td><td> Days </td>`;
+    document.getElementById('rentintervalshead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('rentintervalsbody').innerHTML +=
+            "<tr>" +
+            `<td>${t.model} </td><td> ${t.days}</td>` +
+            "</tr>";
+    })
+}
+
+async function Parametricbrands() {
+    let priceofbrand = [];
+
+    await fetch('http://localhost:10237/ParametricBrand?num=' + parametricbrandid.value)
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            priceofbrand = y;
+        });
+
+    //document.getElementById('sumpricebrandbody').innerHTML = '';
+
+    document.getElementById('parametricbrandshead').innerHTML +=
+        `<td> Models for that brand </td>`;
+    document.getElementById('parametricbrandshead').style.backgroundColor = 'antiquewhite';
+    priceofbrand.forEach(t => {
+        document.getElementById('parametricbrandsbody').innerHTML +=
+            "<tr>" +
+            `<td>${t.model}</td>` +
+            "</tr>";
+    })
+}
+

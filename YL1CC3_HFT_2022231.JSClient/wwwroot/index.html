@@ -12,6 +12,20 @@
         <button onclick="Brandpage()">Brand page</button>
         <button onclick="RentPage()">Rent page</button>
     </div>
+    <div>
+        <div>
+            <button onclick="Sumpricebybrand()">SumPriceByBrand</button>
+            <button onclick="Freqofbrandsrented()">FreqOfBrandsRented</button>
+            <button onclick="Avgpricebybrand()">AvgPriceByBrand</button>
+            <button onclick="Freqofcarsrented()">FreqOfCarsRented</button>
+            <button onclick="Rentintervals()">RentIntervals</button>
+        </div>
+
+        <div>
+            <button onclick="Parametricbrands()">ParametricBrands</button>
+            <input type="number" value="1" id="parametricbrandid"/>
+        </div>
+    </div>
     <div id="carpage">
 
         <div id="carcreate">
@@ -124,6 +138,102 @@
                 </tr>
             </thead>
             <tbody id="rentbody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="sumpricebrand">
+        <table>
+            <thead>
+                <tr id="sumpricebrandhead">
+                </tr>
+            </thead>
+            <tbody id="sumpricebrandbody">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="fraqofbrandsrented">
+        <table>
+            <thead>
+                <tr id="fraqofbrandsrentedhead">
+                </tr>
+            </thead>
+            <tbody id="fraqofbrandsrentedbody">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="avgpricebybrand">
+        <table>
+            <thead>
+                <tr id="avgpricebybrandhead">
+                </tr>
+            </thead>
+            <tbody id="avgpricebybrandbody">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="freqofcarsrented">
+        <table>
+            <thead>
+                <tr id="freqofcarsrentedhead">
+                </tr>
+            </thead>
+            <tbody id="freqofcarsrentedbody">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="rentintervals">
+        <table>
+            <thead>
+                <tr id="rentintervalshead">
+                </tr>
+            </thead>
+            <tbody id="rentintervalsbody">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="parametricbrands">
+
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        Brand
+                    </td>
+                    <td>
+                        ID
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="parametricbrandshow">
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr id="parametricbrandshead">
+                </tr>
+            </thead>
+            <tbody id="parametricbrandsbody">
+                <tr>
+                </tr>
             </tbody>
         </table>
     </div>
