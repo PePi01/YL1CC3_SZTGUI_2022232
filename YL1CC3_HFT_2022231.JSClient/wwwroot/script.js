@@ -215,6 +215,7 @@ function BrandShowBrand() {/*nem kell sztem*/
             "</tr>";
     })
 }
+
 function CreateBrand() {
     let brandname = document.getElementById('brandname').value;
 
@@ -362,7 +363,7 @@ function ModifyRent() {
         })
         .catch((error) => { console.error('Error:', error); });
 
-    //document.getElementById('modifybrand').style.display = 'none';
+    document.getElementById('modifyrent').style.display = 'none';
 }
 function ShowModifyRent(id) {
     rentid = id;
@@ -370,4 +371,13 @@ function ShowModifyRent(id) {
     document.getElementById('starttimemod').value = rents.find(t => t.id == id).start;
     document.getElementById('endtimemod').value = rents.find(t => t.id == id).end;
     document.getElementById('modifyrent').style.display = 'flex';
+    //document.getElementById('modifyrent').style.flexDirection = 'column';
+}
+
+function RentPage() {
+    document.getElementById('brandpage').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentcreate').style.display = 'flex';
+    document.getElementById('modifyrent').style.display = 'flex';
+    document.getElementById('renttabla').style.display = 'flex';
 }

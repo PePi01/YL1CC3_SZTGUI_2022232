@@ -61,4 +61,15 @@ th{
 /*RENT PAGE START*/
 #modifyrent{
     display:none;
+    flex-direction:column;
+    width:300px;
+}
+#rentcreate {
+    display: none;
+    flex-direction: column;
+    width: 300px;
+}
+#renttabla {
+    display: none;
+    flex-direction: column;
 }
