@@ -196,11 +196,25 @@ function ShowModify(id) {
     document.getElementById('modifycar').style.display = 'flex';
     
 } function Carpage() {
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+
+
+
     document.getElementById('carpage').style.display = 'flex';
     document.getElementById('brandpage').style.display = 'none';
     document.getElementById('rentpage').style.display = 'none';
     document.getElementById('modifybrand').style.display = 'none';
     document.getElementById('modifyrent').style.display = 'none';
+
+
+
 }
 /*END OF CAR SECTION */
 
@@ -288,6 +302,15 @@ function ShowModifyBrand(id) {
     document.getElementById('modifybrand').style.display = 'flex';
 }
 function Brandpage() {
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+
     document.getElementById('rentpage').style.display = 'none';
     document.getElementById('brandpage').style.display = 'flex';
     document.getElementById('brandcreate').style.display = 'flex';
@@ -301,6 +324,7 @@ function Brandpage() {
 //START OF RENT SECTION 
 
 function GenerateRent() {
+
     document.getElementById('rentbody').innerHTML = '';
     rents.forEach(t => {
         document.getElementById('rentbody').innerHTML +=
@@ -394,6 +418,19 @@ function ShowModifyRent(id) {
 }
 
 function RentPage() {
+
+
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+
+
+
     document.getElementById('brandpage').style.display = 'none';
     document.getElementById('carpage').style.display = 'none';
     document.getElementById('modifybrand').style.display = 'none';
@@ -411,6 +448,17 @@ function RentPage() {
 async function Sumpricebybrand() {
     let priceofbrand = [];
 
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
 
     await fetch('http://localhost:10237/PriceOfBrands')
         .then(x => x.json())
@@ -421,20 +469,34 @@ async function Sumpricebybrand() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
+    document.getElementById('sumpricebrandhead').innerHTML = '';
     document.getElementById('sumpricebrandhead').innerHTML +=
         `<td> Brand  </td><td> Price</td>`;
     document.getElementById('sumpricebrandhead').style.backgroundColor = 'antiquewhite';
+    document.getElementById('sumpricebrandbody').innerHTML = '';
     priceofbrand.forEach(t => {
         document.getElementById('sumpricebrandbody').innerHTML +=
             "<tr>" +
         `<td>${t.brand}  </td><td> ${t.price}</td>` +
             "</tr>";
     })
+    document.getElementById('sumpricebrand').style.display = 'block';
 }
 
 async function Freqofbrandsrented() {
     let priceofbrand = [];
 
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
 
     await fetch('http://localhost:10237/RentBrandFrequency')
         .then(x => x.json())
@@ -445,20 +507,34 @@ async function Freqofbrandsrented() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
+    document.getElementById('fraqofbrandsrentedhead').innerHTML = '';
     document.getElementById('fraqofbrandsrentedhead').innerHTML +=
         `<td> Brand  </td><td> Frequency </td>`;
     document.getElementById('fraqofbrandsrentedhead').style.backgroundColor = 'antiquewhite';
+    document.getElementById('fraqofbrandsrentedbody').innerHTML = '';
     priceofbrand.forEach(t => {
         document.getElementById('fraqofbrandsrentedbody').innerHTML +=
             "<tr>" +
         `<td>${t.brand}  </td><td> ${t.frequency}</td>` +
             "</tr>";
     })
+    document.getElementById('fraqofbrandsrented').style.display = 'block';
 }
 
 async function Avgpricebybrand() {
     let priceofbrand = [];
 
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
 
     await fetch('http://localhost:10237/AvgPriceOfBrands')
         .then(x => x.json())
@@ -469,20 +545,36 @@ async function Avgpricebybrand() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
+    document.getElementById('avgpricebybrandhead').innerHTML = '';
     document.getElementById('avgpricebybrandhead').innerHTML +=
         `<td> Brand  </td><td> Price </td>`;
     document.getElementById('avgpricebybrandhead').style.backgroundColor = 'antiquewhite';
+    document.getElementById('avgpricebybrandbody').innerHTML = '';
     priceofbrand.forEach(t => {
         document.getElementById('avgpricebybrandbody').innerHTML +=
             "<tr>" +
         `<td>${t.brand}  </td><td> ${t.price}</td>` +
             "</tr>";
     })
+    document.getElementById('avgpricebybrand').style.display = 'block';
 }
 
 async function Freqofcarsrented() {
     let priceofbrand = [];
 
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
+
+    
 
     await fetch('http://localhost:10237/RentFrequency')
         .then(x => x.json())
@@ -493,20 +585,32 @@ async function Freqofcarsrented() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
+    document.getElementById('freqofcarsrentedhead').innerHTML = '';
     document.getElementById('freqofcarsrentedhead').innerHTML +=
         `<td> Model  </td><td> Frequency </td>`;
     document.getElementById('freqofcarsrentedhead').style.backgroundColor = 'antiquewhite';
+    document.getElementById('freqofcarsrentedbody').innerHTML = '';
     priceofbrand.forEach(t => {
         document.getElementById('freqofcarsrentedbody').innerHTML +=
             "<tr>" +
         `<td>${t.model} </td><td> ${t.frequency}</td>` +
             "</tr>";
     })
+    document.getElementById('freqofcarsrented').style.display = 'block';
 }
 
 async function Rentintervals() {
     let priceofbrand = [];
-
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('parametricbrands').style.display = 'none';
+    document.getElementById('parametricbrandsbody').style.display = 'none';
+    document.getElementById('parametricbrandshead').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
 
     await fetch('http://localhost:10237/Renting')
         .then(x => x.json())
@@ -517,18 +621,44 @@ async function Rentintervals() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
+    document.getElementById('rentintervalshead').innerHTML = '';
     document.getElementById('rentintervalshead').innerHTML +=
         `<td> Model </td><td> Days </td>`;
     document.getElementById('rentintervalshead').style.backgroundColor = 'antiquewhite';
+    document.getElementById('rentintervalsbody').innerHTML = '';
     priceofbrand.forEach(t => {
         document.getElementById('rentintervalsbody').innerHTML +=
             "<tr>" +
             `<td>${t.model} </td><td> ${t.days}</td>` +
             "</tr>";
     })
+
+    document.getElementById('rentintervals').style.display = 'block';
+
 }
 
 async function Parametricbrands() {
+
+    //forEach(document.getElementsByClassName('noncrud').style.display = 'none');
+
+    //[].forEach.call(document.querySelectorAll('.noncrud'), function (el) {
+    //    el.style.visibility = 'hidden';
+    //});
+
+    document.getElementById('rentintervals').style.display = 'none';
+    document.getElementById('freqofcarsrented').style.display = 'none';
+    document.getElementById('avgpricebybrand').style.display = 'none';
+    document.getElementById('fraqofbrandsrented').style.display = 'none';
+    document.getElementById('sumpricebrand').style.display = 'none';
+    document.getElementById('carpage').style.display = 'none';
+    document.getElementById('brandpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    //document.getElementById('parametricbrands').style.display = 'none';
+
+    document.getElementById('parametricbrandshead').innerHTML = '';
+    document.getElementById('parametricbrandsbody').innerHTML = '';
+
+
     let priceofbrand = [];
 
     await fetch('http://localhost:10237/ParametricBrand?num=' + parametricbrandid.value)
@@ -540,8 +670,10 @@ async function Parametricbrands() {
 
     //document.getElementById('sumpricebrandbody').innerHTML = '';
 
-    document.getElementById('parametricbrandshead').innerHTML +=
-        `<td> Models for that brand </td>`;
+    document.getElementById('parametricbrandshead').innerHTML = '';
+
+    document.getElementById('parametricbrandshead').innerHTML =
+        `<td> Models for the ${brands.find(t => t.id == parametricbrandid.value).name} brand </td>`;
     document.getElementById('parametricbrandshead').style.backgroundColor = 'antiquewhite';
     priceofbrand.forEach(t => {
         document.getElementById('parametricbrandsbody').innerHTML +=
@@ -549,5 +681,8 @@ async function Parametricbrands() {
             `<td>${t.model}</td>` +
             "</tr>";
     })
+    document.getElementById('parametricbrands').style.display = 'block';
+    document.getElementById('parametricbrandshead').style.display = 'block';
+    document.getElementById('parametricbrandsbody').style.display = 'block';
 }
 
