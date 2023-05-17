@@ -254,6 +254,8 @@ function ShowModifyBrand(id) {
 }
 function Brandpage() {
     document.getElementById('brandpage').style.display = 'flex';
+    document.getElementById('brandcreate').style.display = 'flex';
+    document.getElementById('modifybrand').style.display = 'flex';
     document.getElementById('carpage').style.display = 'none';
 
 

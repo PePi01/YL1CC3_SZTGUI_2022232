@@ -46,7 +46,7 @@ th{
 
 /*Brand page start*/
 
-.brandpage, #brandpage div{
+#brandpage, #brandpage div{
     display:none;
     flex-direction:column;
     width:300px;
