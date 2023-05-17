@@ -60,7 +60,7 @@
         <div id="brandcreate">
             <label>Name</label>
             <input type="text" value="suzuki" id="brandname" />
-            <table >
+            <table>
                 <tbody id="brandshowbrand">
                 </tbody>
             </table>
@@ -81,6 +81,49 @@
                 </tr>
             </thead>
             <tbody id="brandbody">
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <div>
+
+        <div id="rentcreate">
+            <label>Model Id</label>
+            <input type="number"  id="idmodel" />
+            <table>
+                <tbody id="carmodel">
+                </tbody>
+            </table>
+            <label>Start</label>
+            <input type="text" value="2019-07-20T00:00:00" id="starttime" />
+            <label>End</label>
+            <input type="text" value="2022-10-16T00:00:00" id="endtime" />
+            <button type="button" onclick="CreateRent()">Add rent</button>
+        </div>
+        <div id="modifyrent">
+            <label>Modify form</label>
+            <label>Model Id</label>
+            <input type="text" id="idmodelmod" />
+            <label>Start</label>
+            <input type="text" id="starttimemod" />
+            <label>End</label>
+            <input type="text" id="endtimemod" />
+            <button type="button" onclick="ModifyRent()">Modify rent</button>
+        </div>
+        <table id="renttabla">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Model ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="rentbody">
             </tbody>
         </table>
     </div>

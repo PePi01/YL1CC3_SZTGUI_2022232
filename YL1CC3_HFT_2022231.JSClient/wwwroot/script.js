@@ -4,6 +4,7 @@ let rents = [];
 let connection = null;
 let carid = -1;
 let brandid = -1;
+let rentid = -1;
 SetupSignalR();
 
 GetData();
@@ -34,6 +35,16 @@ function SetupSignalR() {
         GetData();
     });
     connection.on("BrandUpdated", (user, message) => {
+        GetData();
+    });
+
+    connection.on("RentCreated", (user, message) => {
+        GetData();
+    });
+    connection.on("RentDeleted", (user, message) => {
+        GetData();
+    });
+    connection.on("RentUpdated", (user, message) => {
         GetData();
     });
 
@@ -71,6 +82,13 @@ async function GetData() {
             console.log(y)
             cars = y;
             GenerateCar();
+        });
+    await fetch('http://localhost:10237/rent')
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            rents = y;
+            GenerateRent();
         });
 }
 
@@ -259,6 +277,97 @@ function Brandpage() {
     document.getElementById('brandcreate').style.display = 'flex';
     //document.getElementById('modifybrand').style.display = 'flex';
     document.getElementById('carpage').style.display = 'none';
+}
+
+//START OF RENT SECTION 
+
+function GenerateRent() {
+    document.getElementById('rentbody').innerHTML = '';
+    rents.forEach(t => {
+        document.getElementById('rentbody').innerHTML +=
+            "<tr>" +
+            `<td>${t.id}</td>` +
+            `<td>${t.carId}</td>` +
+            `<td>${t.start}</td>` +
+            `<td>${t.end}</td>` +
+            `<td><button type="button" onclick="DeleteRent(${t.id})">Delete</button>` +
+        `<button type="button" onclick="ShowModifyRent(${t.id})">Modify</button></td>` +
+            "</tr>";
+    });
+    ShowModelId();
+}
+function CreateRent() {
+    let starttime = document.getElementById('starttime').value;
+    let endtime = document.getElementById('endtime').value;
+    let carid = document.getElementById('idmodel').value;
 
 
+    fetch('http://localhost:10237/rent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { carid:carid ,start: starttime, end:endtime }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            //GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
+
+
+}
+
+function DeleteRent(id) {
+    fetch('http://localhost:10237/rent/' + id, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', },
+        body: null
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            //GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+function ShowModelId() {
+    document.getElementById('carmodel').innerHTML = '';
+
+    cars.forEach(t => {
+        document.getElementById('carmodel').innerHTML +=
+
+            "<tr>" +
+            `<td>${t.id} → ${t.model}</td>` +
+
+            "</tr>";
+    })
+}
+
+function ModifyRent() {
+    let start = document.getElementById('starttimemod').value;
+    let end = document.getElementById('starttimemod').value;
+
+
+    fetch('http://localhost:10237/rent/', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { id: rentid, start: start, end:end }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            //GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
+
+    //document.getElementById('modifybrand').style.display = 'none';
+}
+function ShowModifyRent(id) {
+    rentid = id;
+    document.getElementById('idmodelmod').value = rents.find(t => t.id == id).carId;
+    document.getElementById('starttimemod').value = rents.find(t => t.id == id).start;
+    document.getElementById('endtimemod').value = rents.find(t => t.id == id).end;
+    document.getElementById('modifyrent').style.display = 'flex';
 }
