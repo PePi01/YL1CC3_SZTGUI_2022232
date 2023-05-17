@@ -37,7 +37,6 @@ async function start() {
         console.log("SignalR Connected.");
     } catch (err) {
         console.log(err);
-        console.log("faszomat");
         setTimeout(start, 5000);
     }
 }
@@ -50,6 +49,8 @@ async function GetData() {
             brands = y;
             ShowBrand();
             ShowBrandMod();
+            GenerateBrand();
+            //BrandShowBrand();
         });
     await fetch('http://localhost:10237/car')
         .then(x => x.json())
@@ -60,6 +61,8 @@ async function GetData() {
         });
 }
 
+
+/* START OF CAR SECTION */
 function ShowBrand() {
     document.getElementById('brandshow').innerHTML = '';
     brands.forEach(t => {
@@ -152,4 +155,48 @@ function ShowModify(id) {
     
 } function Carpage() {
     document.getElementById('carpage').style.display = 'flex';
+}
+/*END OF CAR SECTION */
+
+/* START OF BRAND SECTION */
+function GenerateBrand() {
+    document.getElementById('brandbody').innerHTML = '';
+    brands.forEach(t => {
+        document.getElementById('brandbody').innerHTML +=
+            "<tr>" +
+            `<td>${t.id}</td>` +
+            `<td>${t.name}</td>` +
+            `<td><button type="button" onclick="DeleteBrand(${t.id})">Delete</button>` +
+            `<button type="button" onclick="ShowModifyBrand(${t.id})">Modify</button></td>` +
+            "</tr>";
+    });
+}
+function BrandShowBrand() {/*nem kell sztem*/
+
+    document.getElementById('brandshowbrand').innerHTML += '';
+    document.getElementById('brandshowbrand').style.display = 'flex';
+    brands.forEach(t => {
+        document.getElementById('brandshowbrand').innerHTML +=
+            "<tr>" +
+            `<td>${t.id}</td>` +
+            `<td>${t.name}</td>` +
+            "</tr>";
+    })
+}
+function CreateBrand() {
+    let brandname = document.getElementById('brandname').value;
+
+
+    fetch('http://localhost:10237/car', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { name: brandname }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
 }

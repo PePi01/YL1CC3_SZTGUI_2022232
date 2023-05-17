@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Car cataloga</h1>
+    <h1>Car catalog</h1>
     <div id="starter">
         <button onclick="Carpage()">Car page</button>
         <button>Brand page</button>
@@ -51,6 +51,36 @@
                 </tr>
             </thead>
             <tbody id="carbody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="brandpage">
+
+        <div id="brandcreate">
+            <label>Name</label>
+            <input type="text" value="suzuki" id="brandname" />
+            <table >
+                <tbody id="brandshowbrand">
+                </tbody>
+            </table>
+            <button type="button" onclick="CreateBrand()">Add brand</button>
+        </div>
+        <div id="modifybrand">
+            <label>Modify form</label>
+            <label>Brand</label>
+            <input type="text" value="suzuki" id="brandmod" />
+            <button type="button" onclick="ModifyBrand()">Modify brand</button>
+        </div>
+        <table id="brandtabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="brandbody">
             </tbody>
         </table>
     </div>
