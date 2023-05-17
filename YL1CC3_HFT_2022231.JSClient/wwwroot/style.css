@@ -1,7 +1,7 @@
 ﻿h1{
     font-size:30px;
 }
-table,th,td{
+th,td{
     //width:300px;
     border:1px solid black;
 }
@@ -59,17 +59,20 @@ th{
 }
 
 /*RENT PAGE START*/
-#modifyrent{
-    display:none;
-    flex-direction:column;
-    width:300px;
+#rentpage *{
+    margin:5px;
+    padding:5px;
+}
+#modifyrent {
+    display: none;
+    width:500px;
+    
 }
 #rentcreate {
     display: none;
-    flex-direction: column;
-    width: 300px;
+    width: 500px;
 }
 #renttabla {
     display: none;
-    flex-direction: column;
+    width: 800px;
 }

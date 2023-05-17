@@ -187,6 +187,9 @@ function ShowModify(id) {
 } function Carpage() {
     document.getElementById('carpage').style.display = 'flex';
     document.getElementById('brandpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('modifybrand').style.display = 'none';
+    document.getElementById('modifyrent').style.display = 'none';
 }
 /*END OF CAR SECTION */
 
@@ -274,10 +277,14 @@ function ShowModifyBrand(id) {
     document.getElementById('modifybrand').style.display = 'flex';
 }
 function Brandpage() {
+    document.getElementById('rentpage').style.display = 'none';
     document.getElementById('brandpage').style.display = 'flex';
     document.getElementById('brandcreate').style.display = 'flex';
     //document.getElementById('modifybrand').style.display = 'flex';
     document.getElementById('carpage').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'none';
+    document.getElementById('modifyrent').style.display = 'none';
+    document.getElementById('modifycar').style.display = 'none';
 }
 
 //START OF RENT SECTION 
@@ -377,7 +384,10 @@ function ShowModifyRent(id) {
 function RentPage() {
     document.getElementById('brandpage').style.display = 'none';
     document.getElementById('carpage').style.display = 'none';
-    document.getElementById('rentcreate').style.display = 'flex';
-    document.getElementById('modifyrent').style.display = 'flex';
-    document.getElementById('renttabla').style.display = 'flex';
+    document.getElementById('modifybrand').style.display = 'none';
+    document.getElementById('modifycar').style.display = 'none';
+    document.getElementById('rentpage').style.display = 'block';
+    document.getElementById('rentcreate').style.display = 'block';
+    //document.getElementById('modifyrent').style.display = 'block';
+    document.getElementById('renttabla').style.display = 'block';
 }
