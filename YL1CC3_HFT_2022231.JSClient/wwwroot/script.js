@@ -3,6 +3,7 @@ let brands = [];
 let rents = [];
 let connection = null;
 let carid = -1;
+let brandid = -1;
 SetupSignalR();
 
 GetData();
@@ -16,7 +17,6 @@ function SetupSignalR() {
 
     connection.on("CarCreated", (user, message) => {
         GetData();
-        console.log("fasztudja");
     });
 
     connection.on("CarDeleted", (user, message) => {
@@ -26,9 +26,22 @@ function SetupSignalR() {
         GetData();
     });
 
+
+    connection.on("BrandCreated", (user, message) => {
+        GetData();
+    });
+    connection.on("BrandDeleted", (user, message) => {
+        GetData();
+    });
+    connection.on("BrandUpdated", (user, message) => {
+        GetData();
+    });
+
+
     connection.onclose(async () => {
         await start();
     });
+    
     start();
 }
 async function start() {
@@ -110,7 +123,7 @@ function CreateCar() {
         .then(response => response)
         .then(data => {
             console.log('Success:', data);
-            GetData();
+            //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
 }
@@ -123,7 +136,7 @@ function DeleteCar(id) {
         .then(response => response)
         .then(data => {
             console.log('Success:', data);
-            GetData();
+            //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
 }
@@ -142,7 +155,7 @@ function ModifyCar() {
         .then(response => response)
         .then(data => {
             console.log('Success:', data);
-            GetData();
+            //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
 }
@@ -155,6 +168,7 @@ function ShowModify(id) {
     
 } function Carpage() {
     document.getElementById('carpage').style.display = 'flex';
+    document.getElementById('brandpage').style.display = 'none';
 }
 /*END OF CAR SECTION */
 
@@ -187,7 +201,7 @@ function CreateBrand() {
     let brandname = document.getElementById('brandname').value;
 
 
-    fetch('http://localhost:10237/car', {
+    fetch('http://localhost:10237/brand', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
@@ -196,7 +210,51 @@ function CreateBrand() {
         .then(response => response)
         .then(data => {
             console.log('Success:', data);
-            GetData();
+            //GetData();
         })
         .catch((error) => { console.error('Error:', error); });
+
+
+}
+function DeleteBrand(id) {
+    fetch('http://localhost:10237/brand/' + id, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', },
+        body: null
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            //GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function ModifyBrand() {
+    let brandmod = document.getElementById('brandmod').value;
+
+
+    fetch('http://localhost:10237/brand/', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { id: brandid, name: brandmod }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            //GetData();
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+function ShowModifyBrand(id) {
+    brandid = id;
+    document.getElementById('brandmod').value = brands.find(t => t.id == id).name;
+    document.getElementById('modifybrand').style.display = 'flex';
+}
+function Brandpage() {
+    document.getElementById('brandpage').style.display = 'flex';
+    document.getElementById('carpage').style.display = 'none';
+
+
 }

@@ -88,9 +88,9 @@ namespace YL1CC3_HFT_2022231.Logic
 
         public void Update(Brand item)
         {
-            if (item.Name.Length > 8)
+            if (item.Name.Length > 14)
             {
-                throw new ArgumentException();
+                throw new ArgumentException("way too long brand name");
             }
             this.repo.Update(item);
         }

@@ -46,10 +46,13 @@ th{
 
 /*Brand page start*/
 
-#brandpage, #brandpage div{
-    display:flex;
+.brandpage, #brandpage div{
+    display:none;
     flex-direction:column;
     width:300px;
+}
+#modifybrand{
+    display: none;
 }
 #brandshowbrand{
     display:none;
