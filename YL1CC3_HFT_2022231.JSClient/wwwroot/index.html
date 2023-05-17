@@ -7,45 +7,53 @@
 </head>
 <body>
     <h1>Car cataloga</h1>
-    <div id="carcreate">
-        <label>Model</label>
-        <input type="text" value="AAA" id="model" />
-        <table id="bs">
-            <tbody id="brandshow">
+    <div id="starter">
+        <button onclick="Carpage()">Car page</button>
+        <button>Brand page</button>
+        <button>Rent page</button>
+    </div>
+    <div id="carpage">
+
+        <div id="carcreate">
+            <label>Model</label>
+            <input type="text" value="AAA" id="model" />
+            <table id="bs">
+                <tbody id="brandshow">
+                </tbody>
+            </table>
+            <label>BrandId</label>
+            <input type="text" value="2" id="brandid" />
+            <label>Price</label>
+            <input type="number" value="50" id="price" />
+            <button type="button" onclick="CreateCar()">Add car</button>
+        </div>
+        <div id="modifycar">
+            <label>Modify form</label>
+            <label>Model</label>
+            <input type="text" value="AAA" id="modelmod" />
+            <table id="bs">
+                <tbody id="brandshowmod">
+                </tbody>
+            </table>
+            <label>BrandId</label>
+            <input type="number" id="brandidmod" />
+            <label>Price</label>
+            <input type="number" value="50" id="pricemod" />
+            <button type="button" onclick="ModifyCar()">Modify car</button>
+        </div>
+        <table id="cartabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="carbody">
             </tbody>
         </table>
-        <label>BrandId</label>
-        <input type="text" value="2" id="brandid" />
-        <label>Price</label>
-        <input type="number" value="50" id="price" />
-        <button type="button" onclick="CreateCar()">Add car</button>
     </div>
-    <div id="modifycar">
-        <label>Modify form</label>
-        <label>Model</label>
-        <input type="text" value="AAA" id="modelmod" />
-        <table id="bs">
-            <tbody id="brandshowmod">
-            </tbody>
-        </table>
-        <label>BrandId</label>
-        <input type="number"  id="brandidmod" />
-        <label>Price</label>
-        <input type="number" value="50" id="pricemod" />
-        <button type="button" onclick="ModifyCar()">Modify car</button>
-    </div>
-    <table id="cartabla">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="carbody">
-        </tbody>
-    </table>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     <script src="script.js"></script>
 </body>

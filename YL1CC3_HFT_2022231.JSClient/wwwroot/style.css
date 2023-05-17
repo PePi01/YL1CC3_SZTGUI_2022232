@@ -30,3 +30,9 @@ th{
     flex-direction: column;
 }
 
+#carpage{
+    display:none;
+    flex-direction:column;
+    width:400px;
+}
+

@@ -150,4 +150,6 @@ function ShowModify(id) {
     document.getElementById('pricemod').value = cars.find(t => t.id == id).price;
     document.getElementById('modifycar').style.display = 'flex';
     
+} function Carpage() {
+    document.getElementById('carpage').style.display = 'flex';
 }
