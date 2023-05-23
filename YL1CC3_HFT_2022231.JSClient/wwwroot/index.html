@@ -6,26 +6,28 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Car catalog</h1>
+    <h1>Rental service</h1>
     <div id="starter">
         <button onclick="Carpage()">Car page</button>
         <button onclick="Brandpage()">Brand page</button>
         <button onclick="RentPage()">Rent page</button>
     </div>
+    <label id="mutat">Click it again</label>
     <div>
-        <div>
-            <button onclick="Sumpricebybrand()">SumPriceByBrand</button>
-            <button onclick="Freqofbrandsrented()">FreqOfBrandsRented</button>
-            <button onclick="Avgpricebybrand()">AvgPriceByBrand</button>
-            <button onclick="Freqofcarsrented()">FreqOfCarsRented</button>
-            <button onclick="Rentintervals()">RentIntervals</button>
+        <div id="noncrudbut">
+            <button class="alma" onclick="Sumpricebybrand()">SumPriceByBrand</button>
+            <button class="alma" onclick="Freqofbrandsrented()">FreqOfBrandsRented</button>
+            <button class="alma" onclick="Avgpricebybrand()">AvgPriceByBrand</button>
+            <button class="alma" onclick="Freqofcarsrented()">FreqOfCarsRented</button>
+            <button class="alma" onclick="Rentintervals()">RentIntervals</button>
         </div>
 
-        <div>
+        <div id="border">
             <button onclick="Parametricbrands()">ParametricBrands</button>
             <input type="number" id="parametricbrandid" placeholder="Type the brands ID"/>
         </div>
     </div>
+    
     <div id="carpage">
 
         <div id="carcreate">
@@ -142,101 +144,103 @@
         </table>
     </div>
 
-
-    <div id="sumpricebrand" class="noncrud">
-        <table>
-            <thead>
-                <tr id="sumpricebrandhead">
-                </tr>
-            </thead>
-            <tbody id="sumpricebrandbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div id="noncruud">
 
 
-    <div id="fraqofbrandsrented" class="noncrud">
-        <table>
-            <thead>
-                <tr id="fraqofbrandsrentedhead">
-                </tr>
-            </thead>
-            <tbody id="fraqofbrandsrentedbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div id="sumpricebrand" class="noncrud">
+            <table>
+                <thead>
+                    <tr id="sumpricebrandhead">
+                    </tr>
+                </thead>
+                <tbody id="sumpricebrandbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div id="avgpricebybrand" class="noncrud">
-        <table>
-            <thead>
-                <tr id="avgpricebybrandhead">
-                </tr>
-            </thead>
-            <tbody id="avgpricebybrandbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
 
-    <div  class="noncrud">
-        <table id="freqofcarsrented">
-            <thead>
-                <tr id="freqofcarsrentedhead">
-                </tr>
-            </thead>
-            <tbody id="freqofcarsrentedbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <div  class="noncrud">
-        <table id="rentintervals">
-            <thead>
-                <tr id="rentintervalshead">
-                </tr>
-            </thead>
-            <tbody id="rentintervalsbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <div  class="noncrud">
+        <div id="fraqofbrandsrented" class="noncrud">
+            <table>
+                <thead>
+                    <tr id="fraqofbrandsrentedhead">
+                    </tr>
+                </thead>
+                <tbody id="fraqofbrandsrentedbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <table id="parametricbrands">
-            <thead>
-                <tr>
-                    <td>
-                        Brand
-                    </td>
-                    <td>
-                        ID
-                    </td>
-                </tr>
-            </thead>
-            <tbody id="parametricbrandshow">
+        <div id="avgpricebybrand" class="noncrud">
+            <table>
+                <thead>
+                    <tr id="avgpricebybrandhead">
+                    </tr>
+                </thead>
+                <tbody id="avgpricebybrandbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr id="parametricbrandshead">
-                </tr>
-            </thead>
-            <tbody id="parametricbrandsbody">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="noncrud">
+            <table id="freqofcarsrented">
+                <thead>
+                    <tr id="freqofcarsrentedhead">
+                    </tr>
+                </thead>
+                <tbody id="freqofcarsrentedbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="noncrud">
+            <table id="rentintervals">
+                <thead>
+                    <tr id="rentintervalshead">
+                    </tr>
+                </thead>
+                <tbody id="rentintervalsbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="noncrud">
+
+            <table id="parametricbrands">
+                <thead>
+                    <tr>
+                        <td>
+                            Brand
+                        </td>
+                        <td>
+                            ID
+                        </td>
+                    </tr>
+                </thead>
+                <tbody id="parametricbrandshow">
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr id="parametricbrandshead">
+                    </tr>
+                </thead>
+                <tbody id="parametricbrandsbody">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     <script src="script.js"></script>

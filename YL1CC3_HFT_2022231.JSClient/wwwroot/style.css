@@ -18,9 +18,8 @@ th,td{
 th{
     background-color:antiquewhite;
 }
-#starter{
-    display:flex;
-    //flex-direction:column;
+#starter button{
+    margin:20px;
 }
 
 /*CAR PAGE START*/
@@ -81,3 +80,59 @@ th{
 #parametricbrands thead{
     background-color:antiquewhite;
 }
+
+
+#starter button {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 5px #999;
+}
+#starter button:focus {
+    transition: 0.3s;
+    box-shadow: 0 2px black;
+    transform: translateY(3px);
+}
+
+#noncrudbut button{
+    position:relative;
+    border-radius:15px;
+    box-shadow:0 5px #999;
+}
+.alma {
+    position: relative;
+    cursor: pointer;
+    height: 140px;
+    width: 200px;
+    left: 0;
+}
+#border {
+    box-shadow: 0 5px #999;
+    margin-bottom:20px;
+}
+/*#noncrudbut button:focus {
+    transition: 0.3s;
+    box-shadow: 0 2px black;
+    transform: translateY(30px);
+        
+}*/
+
+
+#noncrudbut button:focus {
+    transition: 1s;
+    transform: translateY(650px) rotate(300deg);
+    content: string("kula");//oke ezt nem ertem
+    box-shadow: 0 2px black;
+}
+
+#mutat{
+    position:relative;
+    top:720px;
+    right:-1400px;
+    font-size:2em;
+}
+
+#noncrudbut button {
+    margin: 10px;
+    margin-bottom:20px;
+}
+

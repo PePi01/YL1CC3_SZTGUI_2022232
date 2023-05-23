@@ -447,7 +447,7 @@ function RentPage() {
 // NON CRUD SECTION
 async function Sumpricebybrand() {
     let priceofbrand = [];
-
+    
     document.getElementById('freqofcarsrented').style.display = 'none';
     document.getElementById('rentintervals').style.display = 'none';
     document.getElementById('avgpricebybrand').style.display = 'none';
@@ -471,7 +471,7 @@ async function Sumpricebybrand() {
 
     document.getElementById('sumpricebrandhead').innerHTML = '';
     document.getElementById('sumpricebrandhead').innerHTML +=
-        `<td> Brand  </td><td> Price</td>`;
+        `<td> Brand  </td><td> Value</td>`;
     document.getElementById('sumpricebrandhead').style.backgroundColor = 'antiquewhite';
     document.getElementById('sumpricebrandbody').innerHTML = '';
     priceofbrand.forEach(t => {
@@ -547,7 +547,7 @@ async function Avgpricebybrand() {
 
     document.getElementById('avgpricebybrandhead').innerHTML = '';
     document.getElementById('avgpricebybrandhead').innerHTML +=
-        `<td> Brand  </td><td> Price </td>`;
+        `<td> Brand  </td><td> Avarage price </td>`;
     document.getElementById('avgpricebybrandhead').style.backgroundColor = 'antiquewhite';
     document.getElementById('avgpricebybrandbody').innerHTML = '';
     priceofbrand.forEach(t => {

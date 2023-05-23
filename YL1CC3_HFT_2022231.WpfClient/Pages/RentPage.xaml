@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:YL1CC3_HFT_2022231.WpfClient.Pages"
         xmlns:local1="clr-namespace:YL1CC3_HFT_2022231.WpfClient.ViewModel"
         mc:Ignorable="d"
-        Title="RentPage" Height="800" Width="800">
+        Title="RentPage" Height="450" Width="800">
     <Window.DataContext>
         <local1:RentViewModel/>
     </Window.DataContext>
@@ -37,22 +37,21 @@
             <Label Content="End"/>
             <TextBox Text="{Binding SelectedRent.End, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             <Label Content="Brands to chose from"/>
-            <WrapPanel>
-                <ListBox ItemsSource="{Binding Cars}" HorizontalAlignment="Center" Width="100">
+            <StackPanel>
+                <ListBox ItemsSource="{Binding Cars}" Height="154">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Label Content="{Binding Model}"/>
+                            <StackPanel>
+                                <WrapPanel>
+                                    <Label Content="{Binding Model}"/>
+                                    <Label Content="-->"/>
+                                    <Label Content="{Binding Id}"/>
+                                </WrapPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ListBox ItemsSource="{Binding Cars}" HorizontalAlignment="Center" Width="100">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Label Content="{Binding Id}"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </WrapPanel>
+            </StackPanel>
             <Label Content="Rent car's ID"/>
             <TextBox Text="{Binding SelectedRent.CarId, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             

@@ -35,7 +35,7 @@
             <Label Content="Model"/>
             <TextBox Text="{Binding SelectedCar.Model, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             <Label Content="Brands to chose from"/>
-            <StackPanel >
+            <StackPanel>
                 <ListBox ItemsSource="{Binding Brands}" Height="154">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
