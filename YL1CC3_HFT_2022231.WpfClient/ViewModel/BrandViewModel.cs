@@ -56,11 +56,11 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
                         Name = SelectedBrand.Name,
 
                     });
-                });
-                /*,() =>
+                }
+                ,() =>
                 {
-                    return default; //SelectedBrand != null;
-                });*/
+                    return SelectedBrand != null;
+                });
 
                 DeleteBrandCmd = new RelayCommand(() =>
                 {

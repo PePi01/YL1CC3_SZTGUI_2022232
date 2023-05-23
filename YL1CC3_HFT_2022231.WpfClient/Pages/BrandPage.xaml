@@ -33,7 +33,8 @@
         </StackPanel>
         <StackPanel Grid.Column="2" >
             <Label Content="Brand name"/>
-            <TextBox Text="{Binding SelectedBrand.Name, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
+            <TextBox Text="{Binding 
+                SelectedBrand.Name, Mode=TwoWay}" Background="LightBlue" Margin="5"/>
             
             
 

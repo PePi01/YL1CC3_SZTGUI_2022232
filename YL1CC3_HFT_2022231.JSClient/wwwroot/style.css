@@ -76,3 +76,8 @@ th{
     display: none;
     width: 800px;
 }
+
+/*minden mas*/
+#parametricbrands thead{
+    background-color:antiquewhite;
+}
