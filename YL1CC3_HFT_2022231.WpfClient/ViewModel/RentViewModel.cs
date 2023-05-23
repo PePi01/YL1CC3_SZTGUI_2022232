@@ -46,25 +46,28 @@ namespace YL1CC3_HFT_2022231.WpfClient.ViewModel
         }
         public RentViewModel()
         {
+            var malacka = SelectedRent;
             if (!IsInDesignMode)
             {
                 Rents = new RestCollection<Rent>("http://localhost:10237/", "rent", "hub");
                 Cars = new RestCollection<Car>("http://localhost:10237/", "car", "hub");
-
+               
                 CreateRentCmd = new RelayCommand(() =>
                 {
+                    ;
                     Rents.Add(new Rent()
                     {
+                        
                         CarId = selectedRent.CarId,
                         End = selectedRent.End,
                         Start = selectedRent.Start,
 
-                    });
-                });
-                /*,() =>
+                    }); 
+                }
+                ,() =>
                 {
-                    return default; //SelectedRent != null;
-                });*/
+                    return SelectedRent != null;
+                });
 
                 DeleteRentCmd = new RelayCommand(() =>
                 {
